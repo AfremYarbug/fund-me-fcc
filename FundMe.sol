@@ -4,6 +4,8 @@ pragma solidity ^0.8.8;
 
 import "./PriceConverter.sol";
 
+error NotOwner();
+
 contract FundMe {
     using PriceConverter for uint256;
     // constant, immutable
@@ -77,9 +79,15 @@ contract FundMe {
     // to use same function every time
     modifier onlyOwner() {
         // Withdraw function is only called by the owner and know only the owner can withdraw
-        require(msg.sender = i_owner, "Sender is not owner!");
+        //require(msg.sender = i_owner, "Sender is not owner!");
         /**if the underscore would be below you would tell your 
         function go ahead and run and then run the what is in the modifier*/
+
+        // Instead of a require we do a if statement
+        // saves gase because we don't need to save a long error string message
+        if (msg.sender != i_owner) {
+            revert NotOwner();
+        }
         _;
     }
 }
