@@ -39,7 +39,7 @@ contract FundMe {
         addressToAmountFunded[msg.sender] = msg.value;
     }
 
-    function withdraw() {
+    function withdraw() public onlyOwner {
         // reset addressToAmountFunded
         // loop through funders
         for (
@@ -66,5 +66,15 @@ contract FundMe {
             value: address(this).balance
         }("");
         require(callSuccess, "Call failed");
+    }
+
+    // modifier is a keyword that we can add in the function declaration
+    // to use same function every time
+    modifier onlyOwner() {
+        // Withdraw function is only called by the owner and know only the owner can withdraw
+        require(msg.sender = owner, "Sender is not owner!");
+        /**if the underscore would be below you would tell your 
+        function go ahead and run and then run the what is in the modifier*/
+        _;
     }
 }
