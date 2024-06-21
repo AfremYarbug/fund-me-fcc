@@ -90,4 +90,15 @@ contract FundMe {
         }
         _;
     }
+
+    // What happens if someone sends this contract ETH without calling the fund function
+    // add receive and fallback functions just in case somebody accidentally send money without calling fund function
+
+    receive() external payable {
+        fund();
+    }
+
+    fallback() external payable {
+        fund();
+    }
 }
