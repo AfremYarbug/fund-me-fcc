@@ -5,8 +5,7 @@ pragma solidity ^0.8.8;
 import "./PriceConverter.sol";
 
 contract FundMe {
-
-	using PriceConverter for uint256;
+    using PriceConverter for uint256;
     uint256 public minimumUsd = 50 * 1e18; // 1*10**18
 
     address[] public funders;
@@ -36,13 +35,29 @@ contract FundMe {
     function withdraw() {
         // reset addressToAmountFunded
         // loop through funders
-        for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
-            address funder =funders[funderIndex];
+        for (
+            uint256 funderIndex = 0;
+            funderIndex < funders.length;
+            funderIndex++
+        ) {
+            address funder = funders[funderIndex];
             // reset mapping
             addressToAmountFunded = 0;
         }
 
         // reset funders array
-        // withdraw funds
+
+        funders = new address[](0);
+
+        // // withdraw funds
+
+        // transfer
+        // send
+        // call
+
+        (bool callSuccess, ) = payable(msg.sender).call{
+            value: address(this).balance
+        }("");
+        require(callSuccess, "Call failed");
     }
 }
