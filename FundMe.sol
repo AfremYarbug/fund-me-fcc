@@ -11,6 +11,13 @@ contract FundMe {
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
+    address public owner;
+
+    // whoever is deploying the contract
+    constructor() {
+        owner = msg.sender;
+    }
+
     // make a function payable
     function fund() public payable {
         // Want to be able to set a minimum fund amount in USD
