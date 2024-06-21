@@ -6,16 +6,21 @@ import "./PriceConverter.sol";
 
 contract FundMe {
     using PriceConverter for uint256;
-    uint256 public minimumUsd = 50 * 1e18; // 1*10**18
+    // constant, immutable
+
+    // outside of a function and never changes
+    // Constants are variables that cannot be modified.
+    uint256 public constant MINIMUM_USD = 50 * 1e18; // 1*10**18
 
     address[] public funders;
     mapping(address => uint256) public addressToAmountFunded;
 
-    address public owner;
+    // can be set inside the constructor but cannot be modified afterwards
+    address public immutable i_owner;
 
     // whoever is deploying the contract
     constructor() {
-        owner = msg.sender;
+        I_owner = msg.sender;
     }
 
     // make a function payable
@@ -72,7 +77,7 @@ contract FundMe {
     // to use same function every time
     modifier onlyOwner() {
         // Withdraw function is only called by the owner and know only the owner can withdraw
-        require(msg.sender = owner, "Sender is not owner!");
+        require(msg.sender = i_owner, "Sender is not owner!");
         /**if the underscore would be below you would tell your 
         function go ahead and run and then run the what is in the modifier*/
         _;
