@@ -59,12 +59,18 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 
 ## Review of Interfaces, Importing from GitHub, & Math in Solidity
 
-## Libraries
+## (04:25:03): Libraries
+
+- moving price and conversation math into a library contract
+- getConversationRate be a function of a uint256
+- PriceConverter is a library that going to be attach to a uint256
+- put getPrice, getVersion, getConversationRate into the library contract "PriceConverter.sol"
+- import PriceConverter.sol in FundMe.sol
 
 - [Library](https://docs.soliditylang.org/en/v0.8.14/contracts.html?highlight=library#libraries)
 - [Solidity-by-example Library](https://solidity-by-example.org/library)
 
-## SafeMath, Overflow Checking, and the "unchecked" keyword
+## (04:29:54): SafeMath, Overflow Checking, and the "unchecked" keyword
 
 - [Openzeppelin Safemath](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol)
 - [unchecked vs. checked](https://docs.soliditylang.org/en/latest/control-structures.html#checked-or-unchecked-arithmetic)
