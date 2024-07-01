@@ -9,6 +9,10 @@ contract FundMe {
     // minimumUsd / CurrentEthPriceInUSD
     // 50 / 3000 = 0.1666 Ether in Wei is ... and round it up to 2
 
+    address[] public funders;
+
+    mapping(address=>uint256) public addressToAmountFunded;
+
     // send money to
     function fund() public payable {
         // want to be able to set a minimum fund amount in USD
@@ -21,7 +25,9 @@ contract FundMe {
         // msg.value = ether
         // minimumUsd = usd
 
-        // get evm price
+        funders.push(msg.sender);
+        // see how much ether a user funded
+        addressToAmountFunded[msg.sender] = msg.value;
     }
 
     // returns the price from ethereum in terms of usd

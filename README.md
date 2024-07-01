@@ -48,7 +48,12 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 - Gas Estimation Failed
   - Someone should make an article explaining this error
 
-## Basic Solidity: Arrays & Structs II
+## (04:21:59): Basic Solidity - Arrays & Structs II
+
+- keep track of all the people who sends us money
+- datastructure to keep track
+- array of addresses named funders
+- see how much ether a user funded
 
 - [msg.sender](https://docs.soliditylang.org/en/latest/cheatsheet.html?highlight=msg.sender)
 
