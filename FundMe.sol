@@ -45,16 +45,17 @@ contract FundMe {
        // typecast msg.sender from address type to payable
        // way to send tokens/ethereum
        // automatically reverts
-       payable(msg.sender).transfer(address(this).balance);
+       /* payable(msg.sender).transfer(address(this).balance); */
 
        // send
        // have to add a require statement
-       bool sendSuccess = payable(msg.sender).send(address(this).balance);
-       require(sendSuccess, "Send failed");
+       /* bool sendSuccess = payable(msg.sender).send(address(this).balance);
+       require(sendSuccess, "Send failed"); */
 
        // call
        // call("function information")
+       // recommended way
        (bool callSuccess, ) = payable(msg.sender).call{value: address(this).balance}("");
-       require(sendSuccess, "Send failed");
+       require(callSuccess, "Send failed");
     }
 }
