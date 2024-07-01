@@ -101,10 +101,12 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 
 ## (04:53:20): Basic Solidity Modifiers
 
+- modify withdraw function so that only the owner can withdraw
+
 - [Double equals](https://www.geeksforgeeks.org/solidity-operators/)
 - [Modifier](https://solidity-by-example.org/function-modifier)
 
-## Testnet Demo
+## (04:56:34): Testnet Demo
 
 - [Disconnecting Metamask](https://help.1inch.io/en/articles/4666771-metamask-how-to-connect-disconnect-and-switch-accounts-with-metamask-on-1inch-network)
 
