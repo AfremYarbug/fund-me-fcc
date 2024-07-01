@@ -20,14 +20,25 @@ contract FundMe {
         // get evm price
     }
 
-    // get price in terms of usd 
-    function getPrice() public {
+    // returns the price from ethereum in terms of usd 
+    // converts msg.value (eth) in dollar with chainlink
+    function getPrice() public view returns(uint256) {
         // chainlink data feeds: https://docs.chain.link/data-feeds/using-data-feeds
         // we are interacting outside the contract therefore abi and adress
         // address: https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1
         // 0x694AA1769357215DE4FAC081bf1f309aDC325306
 
         // ABI: https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol
+
+        // has different functions but the import one is getLatestPrice
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        // latestrounddata returns more than one variable but we want only int price
+        (,int256 price,,,) = priceFeed.getLatestRoundData();
+
+        // msg.value has 18 decimals
+        // price has 9 decimals (check decimals function)
+        return uint256(price * 1e10); // 1^10 == 10000000000
+
     }
 
     // Example:
@@ -36,8 +47,13 @@ contract FundMe {
         return priceFeed.version(); 
     }
 
-    function getConversationRate() public {
-
+    function getConversationRate(uint256 ethAmount) public view returns(uint256) {
+        uint256 ethPrice = getPrice();
+        uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1e18;
+        return ethAmountInUsd;
+        /**
+        3000 dollars per ethereum * 1 eth = 3000
+         */
     }
 
     // owner withdraw funds
