@@ -77,8 +77,8 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 
 ## (04:34:29): Basic Solidity - For Loop
 
-- owner want to withdraw the funds and buy things for this project
 - create a for loop to reset funders array and addressToAmountFunded because they should get down to zero
+- if the owner want to withdraw the funds
 
 - [For Loop](https://solidity-by-example.org/loop)
 - `/* */` is another way to make comments
@@ -87,10 +87,12 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 
 ## (04:42:36): Sending ETH from a Contract
 
+- withdraw funds from the contract
+
 - [Transfer, Send, Call](https://solidity-by-example.org/sending-ether/)
 - [this keyword](https://ethereum.stackexchange.com/questions/1781/what-is-the-this-keyword-in-solidity)
 
-## Basic Solidity: Constructor
+## (04:50:26): Basic Solidity Constructor
 
 - [Constructor](https://solidity-by-example.org/constructor)
 
