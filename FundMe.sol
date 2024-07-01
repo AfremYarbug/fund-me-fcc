@@ -5,7 +5,7 @@ import "./PriceConverter.sol";
 
 contract FundMe {
 
-    using 
+    using PriceConverter for uint256;
 
     uint256 public minimumUsd = 50 * 1e18;
     // minimumUsd / CurrentEthPriceInUSD
@@ -32,8 +32,10 @@ contract FundMe {
         addressToAmountFunded[msg.sender] = msg.value;
     }
 
-   
-
-    // owner withdraw funds
-    // function withdraw() {}
+    function withdraw() public {
+       for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+           address funder = funders[funderIndex];
+           addressToAmountFunded[funder] = 0;
+       }
+    }
 }

@@ -75,12 +75,15 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 - [Openzeppelin Safemath](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol)
 - [unchecked vs. checked](https://docs.soliditylang.org/en/latest/control-structures.html#checked-or-unchecked-arithmetic)
 
-## Basic Solidity: For Loop
+## (04:34:29): Basic Solidity - For Loop
+
+- owner want to withdraw the funds and buy things for this project
+- create a for loop to reset funders array and addressToAmountFunded because they should get down to zero
 
 - [For Loop](https://solidity-by-example.org/loop)
 - `/* */` is another way to make comments
 
-## Basic Solidity: Resetting an Array
+## (04:42:01): Basic Solidity - Resetting an Array
 
 ## Sending ETH from a Contract
 
