@@ -94,9 +94,12 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 
 ## (04:50:26): Basic Solidity Constructor
 
+- issue: anybody can withdraw from this contract
+- withdraw function is only called by the owner
+
 - [Constructor](https://solidity-by-example.org/constructor)
 
-## Basic Solidity: Modifiers
+## (04:53:20): Basic Solidity Modifiers
 
 - [Double equals](https://www.geeksforgeeks.org/solidity-operators/)
 - [Modifier](https://solidity-by-example.org/function-modifier)
