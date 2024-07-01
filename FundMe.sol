@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
+// import from github/npm package: yarn add @chainlink/contracts
+import "https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol";
+
 contract FundMe {
 
     uint256 public minimumUsd = 50;
