@@ -85,7 +85,7 @@ _[⌨️ (03:31:55) Lesson 4: Remix Fund Me](https://www.youtube.com/watch?v=gyM
 
 ## (04:42:01): Basic Solidity - Resetting an Array
 
-## Sending ETH from a Contract
+## (04:42:36): Sending ETH from a Contract
 
 - [Transfer, Send, Call](https://solidity-by-example.org/sending-ether/)
 - [this keyword](https://ethereum.stackexchange.com/questions/1781/what-is-the-this-keyword-in-solidity)
